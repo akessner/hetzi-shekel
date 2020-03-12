@@ -18,8 +18,8 @@ $turn-time: 8s;
   transition: all .3s;
 }
 
-.coin__front,
-.coin__back {
+.coin_front,
+.coin_back {
   position: absolute;
   width: $coin-diameter;
   height: $coin-diameter;
@@ -41,18 +41,18 @@ $turn-time: 8s;
   }
 }
 
-.coin__front {
+.coin_front {
   background-image: url($coin-front);
   background-size: cover;
   transform: translateZ($coin-thickness/2);
 }
-.coin__back {
+.coin_back {
   background-image: url($coin-back);
   background-size: cover;
   transform: translateZ(-$coin-thickness/2) rotateY(180deg);
 }
 
-.coin__edge {
+.coin_edge {
   @for $i from 1 through $edge-faces {
     div:nth-child(#{$i}) {
       position: absolute;
@@ -69,7 +69,7 @@ $turn-time: 8s;
   }
 }
 
-.coin__shadow {
+.coin_shadow {
   position: absolute;
   width: $coin-diameter;
   height: $coin-thickness;

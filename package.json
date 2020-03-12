@@ -1,0 +1,31 @@
+{
+  "name": "hetzi-shekel",
+  "version": "0.0.1",
+  "description": "donate a hetzi-shekel",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "ospec --require ./test-setup.js",
+    "start": "webpack src/index.js --output bin/app.js -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akessner/hetzi-shekel.git"
+  },
+  "author": "akessner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akessner/hetzi-shekel/issues"
+  },
+  "homepage": "https://github.com/akessner/hetzi-shekel#readme",
+  "devDependencies": {
+    "@types/mithril": "^2.0.2",
+    "jsdom": "^16.2.1",
+    "mithril-query": "^3.1.0",
+    "ospec": "^4.0.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "mithril": "^2.0.4"
+  }
+}
