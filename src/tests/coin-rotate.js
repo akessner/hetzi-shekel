@@ -1,12 +1,13 @@
-var mq = require("mithril-query")
-var o = require("ospec")
+const mq = require("mithril-query")
+const o = require("ospec")
 
-var RotatingCoin = require("../coin-rotate.js")
-
-o.spec("MyComponent", function() {
-    o("things are working", function() {
+const RotatingCoin = require("../coin-rotate.js")
+console.log(" 1")
+o.spec("RotatingCoin", function() {
+    console.log(" 2")
+    o("has multiple faces", function() {
+        console.log("3 test")
         var out = mq(RotatingCoin)
-
-        out.should.contain("day")
+         out.should.have.at.least(80, 'div')
     })
 })
