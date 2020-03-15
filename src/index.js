@@ -1,23 +1,33 @@
 import m from "mithril";
-import RotatingCoin from "./coin-rotate"
+import RotatingCoin from "./coin-rotate";
 const coinArray = [];
-const coinNumber= 3;
+const coinNumber = 100;
 let coinIndex = 0;
-for(let i=0;i<coinNumber;i++) {
+
+/// 12345 , 678910, 1112131415, 1617181920
+//  2122232425,
+
+function generateCoin(i, coinIndex) {
+  setTimeout(() => {
+    const col = parseInt(i / 5);
+    const row = parseInt(i / 20);
+    const rowOffset = row * 75;
+    const topValue = rowOffset - coinIndex * 2;
+    const leftValue = (col % 4) * 110;
     let flipped = Math.random() >= 0.501;
-    if(i==0)
-    {
-        coinArray.push(m(RotatingCoin, {ml:0, mt:0, flip:flipped }))
-    } else if (i%5==0){
-        coinIndex = 0;
-        coinArray.push(m(RotatingCoin, {ml:0, mt:i*coinIndex, flip:flipped }))
-    } 
-    else {
-        coinArray.push(m(RotatingCoin, {ml:coinIndex*80, mt:-150, flip:flipped }))
-    }
-    coinIndex++
-  
+
+    coinArray.push(
+      m(RotatingCoin, { ml: leftValue, mt: topValue, flip: flipped })
+    );
+
+    m.render(document.body, [coinArray]);
+  }, 300 * i);
 }
-m.render(document.body, [
-   coinArray
-]);
+
+for (let i = 0; i < coinNumber; i++) {
+  if (i % 5 == 0) {
+    coinIndex = 0;
+  }
+  generateCoin(i, coinIndex);
+  coinIndex++;
+}

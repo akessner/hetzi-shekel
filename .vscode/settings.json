@@ -1,5 +1,18 @@
 {
-    "cSpell.words": [
-        "hetzi"
+  "cSpell.words": [
+    "hetzi",
+    "vnode"
+],
+  "editor": {
+    "formatOnSave": true
+  },
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "isAsync": true,
+        "cmd": "npm run test"
+      }
     ]
+  }
 }
