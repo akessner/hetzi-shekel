@@ -1,6 +1,6 @@
 const m = require("mithril");
 
-function RotatingCoin() {
+function Coin() {
   let edgeArray = [];
   for (let i = 0; i < 80; i++) {
     edgeArray.push(m("div"));
@@ -29,4 +29,4 @@ function RotatingCoin() {
   };
 }
 
-module.exports = RotatingCoin;
+module.exports = Coin;

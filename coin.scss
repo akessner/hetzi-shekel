@@ -83,35 +83,25 @@ $fly-time: 1.2s;
 
   100% {
     top: 0px;
-    left: 400px;
+    left: 100px;
   }
 }
 
 @keyframes floating {
   1% {
-    top: 200px;
+    top: 100px;
     left: 0px;
   }
 
   50% {
-    top: 0px;
-    left: 200px;
+    top: -50px;
+    left: 25px;
   }
 
   100% {
-    top: 200px;
-    left: 400px;
+    top: 50px;
+    left: 50px;
     transform: perspective(1000px) rotateY(360deg) rotateZ(180deg)
       rotateX(840deg);
   }
 }
-
-// @keyframes shine {
-//   0%,
-//   15% {
-//     transform: translateY($coin-diameter * 2) rotate(-40deg);
-//   }
-//   50% {
-//     transform: translateY(-$coin-diameter) rotate(-40deg);
-//   }
-//}

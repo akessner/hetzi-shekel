@@ -1,9 +1,8 @@
 import m from "mithril";
-import RotatingCoin from "./coin-rotate";
+import Coin from "./coin-rotate";
 import FamilyForm from "./family-count";
 
 const coinArray = [];
-let coinNumber = 5;
 let coinIndex = 0;
 let coins;
 
@@ -16,15 +15,12 @@ function generateCoin(i, coinIndex) {
     const leftValue = (col % 4) * 110;
     let flipped = Math.random() >= 0.501;
 
-    coinArray.push(
-      m(RotatingCoin, { ml: leftValue, mt: topValue, flip: flipped })
-    );
-    console.log(coins);
+    coinArray.push(m(Coin, { ml: leftValue, mt: topValue, flip: flipped }));
     m.render(document.querySelector(".coins"), [coinArray]);
   }, 300 * i);
 }
-function submit() {
-  console.log(coinNumber);
+function submit(coinNumber) {
+  document.querySelector(".coins").innerHTML = "";
   for (let i = 0; i < coinNumber; i++) {
     if (i % 5 == 0) {
       coinIndex = 0;
@@ -38,8 +34,13 @@ function createShekelForm() {
   coins = m("div", { class: "coins" });
   let form = m("div", { class: "family-form" });
   m.render(document.body, [form, coins]);
-  m.mount(document.querySelector(".family-form"), FamilyForm);
-  submit();
+  m.mount(document.querySelector(".family-form"), {
+    view: function() {
+      return m(FamilyForm, {
+        onSubmit: submit
+      });
+    }
+  });
 }
 
 createShekelForm();
