@@ -32,9 +32,11 @@ function onSubmit(count) {
 
 function increaseCount(event) {
   count++;
+  if (count > 100) count = 100;
 }
 function decreaseCount(event) {
   count--;
+  if (count < 0) count = 0;
 }
 
 function submit(event) {
