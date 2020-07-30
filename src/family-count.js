@@ -13,6 +13,9 @@ function FamilyForm() {
         m("input.input[type=text][placeholder=Insert a number]", {
           oninput: function(e) {
             count = e.target.value;
+            if (count < 0) count = 0;
+            if (count > 100) count = 100;
+            if (isNaN(count)) count = 0;
           },
           value: count,
           class: "input-box"
