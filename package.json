@@ -19,7 +19,7 @@
   "homepage": "https://github.com/akessner/hetzi-shekel#readme",
   "devDependencies": {
     "@types/mithril": "^2.0.2",
-    "jsdom": "^16.2.1",
+    "jsdom": "^16.5.0",
     "mithril-query": "^3.1.0",
     "ospec": "^4.0.1",
     "webpack": "^4.42.0",
